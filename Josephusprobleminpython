@@ -1,0 +1,27 @@
+class Node:
+    def __init__(self,key=None):
+        self.key=key
+        self.next=None
+
+t=Node()
+x=Node()
+
+N= 9
+M=5
+
+t.key=1
+x=t
+
+for i in range(2,N+1):
+    t.next=Node()
+    t=t.next
+    t.key=i
+t.next=x
+while t!= t.next:
+    for i in range(1,M):
+      t=t.next
+    print(t.next.key)
+    x=t.next
+    t.next=t.next.next
+    x=None
+print(t.key)
